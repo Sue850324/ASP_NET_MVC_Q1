@@ -1,0 +1,25 @@
+﻿@model ASP_NET_MVC_Q1.Models.FileModel
+
+
+<p>Name: @Session["Name"]</p>
+<p>Phone: @Session["Phone"]</p>
+<p>Email: @Session["Email"]</p>
+
+
+@using (Html.BeginForm("Check", "Customer", FormMethod.Post))
+{
+    <div>
+        <label>
+            另存新檔:
+        </label>
+        @Html.TextBoxFor(Model => Model.fileName, new { style = "width:100px;" })
+        @Html.ValidationMessageFor(Model => Model.fileName)
+    </div>
+    <button type="submit" class="button02">Save</button>
+}
+
+
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
