@@ -1,13 +1,12 @@
 ﻿@model ASP_NET_MVC_Q1.Models.UserModel
-
-@using (Html.BeginForm("Check", "Customer", FormMethod.Post))
-{
+    
+<form action="/Customer/Check" method="post">
     <div>
         <label>
             Name:
         </label>
         <p>
-            @Html.TextBox("Name")
+            <input type="text" name="Name" required>
             @Html.ValidationMessageFor(Model => Model.name)
         </p>
     </div>
@@ -16,7 +15,7 @@
             Phone:
         </label>
         <p>
-            @Html.TextBox("Phone")
+            <input type="text" name="Phone" required>
             @Html.ValidationMessageFor(Model => Model.phone)
         </p>
     </div>
@@ -25,14 +24,14 @@
             Email:
         </label>
         <p>
-            @Html.TextBox("Email")
+            <input type="email" name="Email" required>
             @Html.ValidationMessageFor(Model => Model.email)
         </p>
     </div>
     <button type="submit" class="button02">Check</button>
-}
+</form>
 
-    @section scripts{
-        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
-        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-    }
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}

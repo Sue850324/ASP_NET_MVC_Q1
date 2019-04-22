@@ -12,8 +12,8 @@ namespace ASP_NET_MVC_Q1.Controllers
     public class CustomerController : Controller
     {
         public ActionResult Detail()
-        {
-            return View();
+        {       
+                return View();          
         }
 
         public ActionResult Check()
@@ -25,13 +25,13 @@ namespace ASP_NET_MVC_Q1.Controllers
         public ActionResult Check(UserModel user)
         {
 
-            UserModel userModel = new UserModel();
+            if(ModelState.IsValid)
+            {
+                return View(user);
+            }
 
-            userModel.name = user.name;
-            userModel.email = user.email;
-            userModel.phone = user.phone;
-
-            return View(userModel);
+            return View("Detail");
+           
         }
 
 
