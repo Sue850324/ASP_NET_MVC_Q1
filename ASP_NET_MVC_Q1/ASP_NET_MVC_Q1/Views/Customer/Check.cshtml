@@ -1,0 +1,34 @@
+﻿@model ASP_NET_MVC_Q1.Models.UserModel
+@using (Html.BeginForm("Save", "Data", FormMethod.Post))
+{
+<div>
+    <label>
+        Name:
+    </label>
+    <input type="hidden" name="Name" value="@Model.name">
+    @Html.DisplayFor(Model => Model.name)
+
+</div>
+<div>
+    <label>
+        Phone: 
+    </label>
+    <input type="hidden" name="Phone" value="@Model.phone">
+    @Html.DisplayFor(Model => Model.phone)
+</div>
+<div>
+    <label>
+        Email:
+    </label>
+    <input type="hidden" name="Email" value="@Model.email">
+    @Html.DisplayFor(Model => Model.email)
+
+</div>
+    <button type="submit" class="button02">Save</button>
+    }
+
+
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
